@@ -1,6 +1,0 @@
-﻿namespace InternetMonitor
-{
-    class Results
-    {
-    }
-}
