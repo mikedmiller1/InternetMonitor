@@ -223,5 +223,30 @@ namespace InternetMonitor
             // Update the monitor name address
             theMonitor.NameAddress = NameAddressText.Text;
         }
+
+
+
+        /// <summary>
+        /// Called when the start button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StartButton_Click( object sender, EventArgs e )
+        {
+            // Start logging
+            theMonitor.StartLogging();
+        }
+
+
+
+        /// <summary>
+        /// Called when the stop button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StopButton_Click( object sender, EventArgs e )
+        {
+            theMonitor.StopLogging();
+        }
     }
 }

@@ -70,7 +70,10 @@ namespace InternetMonitor
 
 
 
-
+        /// <summary>
+        /// Converts the result to a string
+        /// </summary>
+        /// <returns>A string of the result information</returns>
         public override string ToString()
         {
             // Initialize the string

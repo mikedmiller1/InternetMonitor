@@ -27,10 +27,11 @@ namespace InternetMonitor
 
 
 
+        
+        private int _LogInterval;
         /// <summary>
         /// Interval between results logging, in seconds
         /// </summary>
-        private int _LogInterval;
         public int LogInterval
         {
             get
@@ -91,11 +92,16 @@ namespace InternetMonitor
         /// </summary>
         public void StartLogging()
         {
-            // Start the timer
-            theTimer.Enabled = true;
+            // If the log file has been defined
+            if( LogFile != "" )
+            {
 
-            // Log a result now
-            LogResult();
+                // Start the timer
+                theTimer.Enabled = true;
+
+                // Log a result now
+                LogResult();
+            }
         }
 
 

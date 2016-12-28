@@ -43,6 +43,8 @@
             this.RouterAddressText = new System.Windows.Forms.TextBox();
             this.IpAddressText = new System.Windows.Forms.TextBox();
             this.NameAddressText = new System.Windows.Forms.TextBox();
+            this.StartButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -105,7 +107,7 @@
             // 
             // LogNowButton
             // 
-            this.LogNowButton.Location = new System.Drawing.Point(15, 136);
+            this.LogNowButton.Location = new System.Drawing.Point(539, 137);
             this.LogNowButton.Name = "LogNowButton";
             this.LogNowButton.Size = new System.Drawing.Size(75, 23);
             this.LogNowButton.TabIndex = 6;
@@ -170,11 +172,33 @@
             this.NameAddressText.Text = global::InternetMonitor.Properties.Settings.Default.NameAddress;
             this.NameAddressText.TextChanged += new System.EventHandler(this.NameAddressText_TextChanged);
             // 
+            // StartButton
+            // 
+            this.StartButton.Location = new System.Drawing.Point(340, 137);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(75, 23);
+            this.StartButton.TabIndex = 13;
+            this.StartButton.Text = "Start";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(421, 137);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(75, 23);
+            this.StopButton.TabIndex = 14;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 172);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.StartButton);
             this.Controls.Add(this.NameAddressText);
             this.Controls.Add(this.IpAddressText);
             this.Controls.Add(this.RouterAddressText);
@@ -213,6 +237,8 @@
         private System.Windows.Forms.TextBox RouterAddressText;
         private System.Windows.Forms.TextBox IpAddressText;
         private System.Windows.Forms.TextBox NameAddressText;
+        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.Button StopButton;
     }
 }
 
