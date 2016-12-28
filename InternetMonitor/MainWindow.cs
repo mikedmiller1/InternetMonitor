@@ -149,6 +149,19 @@ namespace InternetMonitor
 
 
         /// <summary>
+        /// Called when the log now button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LogNowButton_Click( object sender, EventArgs e )
+        {
+            // Log a result
+            theMonitor.LogResult();
+        }
+
+
+
+        /// <summary>
         /// Called when the form is closed
         /// </summary>
         /// <param name="sender"></param>
@@ -162,7 +175,7 @@ namespace InternetMonitor
 
 
         /// <summary>
-        /// Called when the log interval text is changed
+        /// Called when the log interval text field is changed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -170,6 +183,45 @@ namespace InternetMonitor
         {
             // Update the monitor log interval
             theMonitor.LogInterval = Int32.Parse( LogIntervalText.Text );
+        }
+
+
+
+        /// <summary>
+        /// Called when the router address text field is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RouterAddressText_TextChanged( object sender, EventArgs e )
+        {
+            // Updated the monitor router address
+            theMonitor.RouterAddress = RouterAddressText.Text;
+        }
+
+
+
+        /// <summary>
+        /// Called when the IP address text field is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IpAddressText_TextChanged( object sender, EventArgs e )
+        {
+            // Update the monitor IP address
+            theMonitor.IpAddress = IpAddressText.Text;
+        }
+
+
+
+        /// <summary>
+        /// Called when the name address text field is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameAddressText_TextChanged( object sender, EventArgs e )
+        {
+            // Update the monitor name address
+            theMonitor.NameAddress = NameAddressText.Text;
         }
     }
 }

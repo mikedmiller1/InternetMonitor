@@ -36,6 +36,13 @@
             this.LogIntervalLabel = new System.Windows.Forms.Label();
             this.LogIntervalText = new System.Windows.Forms.TextBox();
             this.LogFileText = new System.Windows.Forms.TextBox();
+            this.LogNowButton = new System.Windows.Forms.Button();
+            this.RouterAddressLabel = new System.Windows.Forms.Label();
+            this.IpAddressLabel = new System.Windows.Forms.Label();
+            this.NameAddressLabel = new System.Windows.Forms.Label();
+            this.RouterAddressText = new System.Windows.Forms.TextBox();
+            this.IpAddressText = new System.Windows.Forms.TextBox();
+            this.NameAddressText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -72,9 +79,9 @@
             this.LogIntervalLabel.AutoSize = true;
             this.LogIntervalLabel.Location = new System.Drawing.Point(12, 35);
             this.LogIntervalLabel.Name = "LogIntervalLabel";
-            this.LogIntervalLabel.Size = new System.Drawing.Size(63, 13);
+            this.LogIntervalLabel.Size = new System.Drawing.Size(68, 13);
             this.LogIntervalLabel.TabIndex = 4;
-            this.LogIntervalLabel.Text = "Log Interval";
+            this.LogIntervalLabel.Text = "Interval (sec)";
             // 
             // LogIntervalText
             // 
@@ -90,17 +97,91 @@
             // LogFileText
             // 
             this.LogFileText.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::InternetMonitor.Properties.Settings.Default, "LogFileName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.LogFileText.Location = new System.Drawing.Point(62, 6);
+            this.LogFileText.Location = new System.Drawing.Point(81, 6);
             this.LogFileText.Name = "LogFileText";
-            this.LogFileText.Size = new System.Drawing.Size(519, 20);
+            this.LogFileText.Size = new System.Drawing.Size(500, 20);
             this.LogFileText.TabIndex = 1;
             this.LogFileText.Text = global::InternetMonitor.Properties.Settings.Default.LogFileName;
+            // 
+            // LogNowButton
+            // 
+            this.LogNowButton.Location = new System.Drawing.Point(15, 136);
+            this.LogNowButton.Name = "LogNowButton";
+            this.LogNowButton.Size = new System.Drawing.Size(75, 23);
+            this.LogNowButton.TabIndex = 6;
+            this.LogNowButton.Text = "Log Now";
+            this.LogNowButton.UseVisualStyleBackColor = true;
+            this.LogNowButton.Click += new System.EventHandler(this.LogNowButton_Click);
+            // 
+            // RouterAddressLabel
+            // 
+            this.RouterAddressLabel.AutoSize = true;
+            this.RouterAddressLabel.Location = new System.Drawing.Point(12, 61);
+            this.RouterAddressLabel.Name = "RouterAddressLabel";
+            this.RouterAddressLabel.Size = new System.Drawing.Size(39, 13);
+            this.RouterAddressLabel.TabIndex = 7;
+            this.RouterAddressLabel.Text = "Router";
+            // 
+            // IpAddressLabel
+            // 
+            this.IpAddressLabel.AutoSize = true;
+            this.IpAddressLabel.Location = new System.Drawing.Point(12, 87);
+            this.IpAddressLabel.Name = "IpAddressLabel";
+            this.IpAddressLabel.Size = new System.Drawing.Size(58, 13);
+            this.IpAddressLabel.TabIndex = 8;
+            this.IpAddressLabel.Text = "IP Address";
+            // 
+            // NameAddressLabel
+            // 
+            this.NameAddressLabel.AutoSize = true;
+            this.NameAddressLabel.Location = new System.Drawing.Point(12, 113);
+            this.NameAddressLabel.Name = "NameAddressLabel";
+            this.NameAddressLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameAddressLabel.TabIndex = 9;
+            this.NameAddressLabel.Text = "Name";
+            // 
+            // RouterAddressText
+            // 
+            this.RouterAddressText.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::InternetMonitor.Properties.Settings.Default, "RouterAddress", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.RouterAddressText.Location = new System.Drawing.Point(81, 58);
+            this.RouterAddressText.Name = "RouterAddressText";
+            this.RouterAddressText.Size = new System.Drawing.Size(166, 20);
+            this.RouterAddressText.TabIndex = 10;
+            this.RouterAddressText.Text = global::InternetMonitor.Properties.Settings.Default.RouterAddress;
+            this.RouterAddressText.TextChanged += new System.EventHandler(this.RouterAddressText_TextChanged);
+            // 
+            // IpAddressText
+            // 
+            this.IpAddressText.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::InternetMonitor.Properties.Settings.Default, "IpAddress", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.IpAddressText.Location = new System.Drawing.Point(81, 84);
+            this.IpAddressText.Name = "IpAddressText";
+            this.IpAddressText.Size = new System.Drawing.Size(166, 20);
+            this.IpAddressText.TabIndex = 11;
+            this.IpAddressText.Text = global::InternetMonitor.Properties.Settings.Default.IpAddress;
+            this.IpAddressText.TextChanged += new System.EventHandler(this.IpAddressText_TextChanged);
+            // 
+            // NameAddressText
+            // 
+            this.NameAddressText.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::InternetMonitor.Properties.Settings.Default, "NameAddress", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.NameAddressText.Location = new System.Drawing.Point(81, 110);
+            this.NameAddressText.Name = "NameAddressText";
+            this.NameAddressText.Size = new System.Drawing.Size(166, 20);
+            this.NameAddressText.TabIndex = 12;
+            this.NameAddressText.Text = global::InternetMonitor.Properties.Settings.Default.NameAddress;
+            this.NameAddressText.TextChanged += new System.EventHandler(this.NameAddressText_TextChanged);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 294);
+            this.ClientSize = new System.Drawing.Size(626, 172);
+            this.Controls.Add(this.NameAddressText);
+            this.Controls.Add(this.IpAddressText);
+            this.Controls.Add(this.RouterAddressText);
+            this.Controls.Add(this.NameAddressLabel);
+            this.Controls.Add(this.IpAddressLabel);
+            this.Controls.Add(this.RouterAddressLabel);
+            this.Controls.Add(this.LogNowButton);
             this.Controls.Add(this.LogIntervalText);
             this.Controls.Add(this.LogIntervalLabel);
             this.Controls.Add(this.LogFileBrowseButton);
@@ -125,6 +206,13 @@
         private System.Windows.Forms.Button LogFileBrowseButton;
         private System.Windows.Forms.Label LogIntervalLabel;
         private System.Windows.Forms.TextBox LogIntervalText;
+        private System.Windows.Forms.Button LogNowButton;
+        private System.Windows.Forms.Label RouterAddressLabel;
+        private System.Windows.Forms.Label IpAddressLabel;
+        private System.Windows.Forms.Label NameAddressLabel;
+        private System.Windows.Forms.TextBox RouterAddressText;
+        private System.Windows.Forms.TextBox IpAddressText;
+        private System.Windows.Forms.TextBox NameAddressText;
     }
 }
 
